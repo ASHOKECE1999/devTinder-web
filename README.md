@@ -13,6 +13,8 @@
 - installed redux and configured the app with redux-tool-kit
 - installed @redux-toolkit react-redux
 - created userSlice
+- implemented a login page
+- if user try to access other routes then we will redirect you too login page
 
 - Body
   - NavBar
