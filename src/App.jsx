@@ -23,7 +23,7 @@ function App() {
             <Route path="/" element={<Body />}>
               <Route path="/" element={<FeedPage />} />
               <Route path="/login" element={<Login />} />
-              <Route path="/profile" element={<Profile />} />
+              <Route exact path="/profile" element={<Profile />} />
             </Route>
           </Routes>
         </BrowserRouter>

@@ -1,25 +1,46 @@
-import React from "react";
+import React, { useState } from "react";
 import { useSelector } from "react-redux";
+import EditProfile from "./EditProfile";
 
 const Profile = () => {
   const user = useSelector((state) => state.user);
-  return (
-    <div>
-      <div className="card card-side bg-base-100 shadow-sm mx-3 border-amber-50 border-2 p-2 mt-4">
-        <img src={user.profileUrl} alt="Movie" className="w-1/4 rounded-4xl" />
+  const [showToast, showToastSetter] = useState(false);
 
-        <div className="card-body">
-          <h2 className="card-title font-extrabold">{user.firstName}</h2>
-          <p>{user.lastName}</p>
-          <p>{user.gender}</p>
-          <p>{user.about}</p>
-          <p>🤹{user?.skills?.map((each) => each + " ")}</p>
-          <div className="card-actions justify-end">
-            <button className="btn btn-primary">Watch</button>
+  return (
+    <>
+      {showToast && (
+        <div className="toast toast-top toast-center mt-10">
+          <div className="alert alert-success">
+            <span>Profile saved successfully.</span>
+          </div>
+        </div>
+      )}
+      <div className="min-h-screen flex items-center  bg-base-200">
+        <EditProfile showToastCall={showToastSetter} />
+        <div className="card card-side bg-base-100 shadow-md border border-amber-200 p-4 max-w-xl w-1/4 flex flex-col items-center">
+          <img
+            src={user?.profileUrl}
+            alt={`${user?.firstName} profile`}
+            className="w-34 rounded-2xl object-cover"
+          />
+
+          <div className="card-body flex-grow space-y-2">
+            <h2 className="card-title text-2xl font-bold text-primary">
+              {user?.firstName} {user?.lastName}
+            </h2>
+            <p className="text-sm text-gray-600">{user?.gender}</p>
+            <p className="text-base text-gray-600">{user?.about}</p>
+
+            {user?.skills?.length > 0 && (
+              <p className="text-sm text-gray-700">
+                <span className="font-semibold">🤹 Skills:</span>{" "}
+                {user?.skills?.join(", ")}
+              </p>
+            )}
           </div>
         </div>
       </div>
-    </div>
+    </>
   );
 };
 
