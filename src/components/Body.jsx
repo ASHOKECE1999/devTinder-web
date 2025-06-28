@@ -11,7 +11,7 @@ const Body = () => {
   const dispatch = useDispatch();
   const naviagate = useNavigate();
   const user = useSelector((state) => state.user);
-  console.log(user);
+  // console.log(user);
 
   useEffect(() => {
     fetchUser();
@@ -23,10 +23,10 @@ const Body = () => {
         withCredentials: true,
       });
       dispatch(addUser(user.data));
-      console.log(user.data);
+      // console.log(user.data);
       return naviagate("/");
     } catch (error) {
-      console.log(error.message);
+      // console.log(error.message);
       return naviagate("/login");
     }
   };

@@ -6,8 +6,8 @@ import { BASE_FETCH_URL } from "../utils/constant";
 import { useNavigate } from "react-router-dom";
 
 const Login = () => {
-  const [emailId, emailIdSetter] = useState("test@dev.com");
-  const [password, passwordSetter] = useState("test@123");
+  const [emailId, emailIdSetter] = useState("AshokKumar@dev.com");
+  const [password, passwordSetter] = useState("Ashok@123");
   const [error, setError] = useState("");
   const dispatch = useDispatch();
   const navigate = useNavigate();
@@ -24,8 +24,8 @@ const Login = () => {
           withCredentials: true,
         }
       );
-      console.log(res);
-      if (res.st) dispatch(addUser(res.data));
+      // console.log(res);
+      dispatch(addUser(res.data));
       navigate("/");
     } catch (error) {
       console.log(error);

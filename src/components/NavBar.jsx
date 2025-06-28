@@ -9,7 +9,7 @@ const NavBar = () => {
   const user = useSelector((state) => state.user);
   const dispatch = useDispatch();
   const navigate = useNavigate();
-  console.log(user);
+  // console.log(user);
 
   const logoutprofile = async () => {
     try {
@@ -32,7 +32,9 @@ const NavBar = () => {
     <div>
       <div className="navbar bg-base-300 shadow-sm">
         <div className="flex-1">
-          <a className="btn btn-ghost text-xl">👩‍💻 DevTinder</a>
+          <Link to="/" className="btn btn-ghost text-xl">
+            👩‍💻 DevTinder
+          </Link>
         </div>
 
         {user && (
@@ -44,7 +46,7 @@ const NavBar = () => {
                 role="button"
                 className="btn btn-ghost btn-circle avatar"
               >
-                <div className="w-10 rounded-full">
+                <div className="w-10 rounded-full ring-primary ring-offset-base-100  ring-2 ring-offset-2">
                   <img alt="profileURL" src={user.profileUrl} />
                 </div>
               </div>
