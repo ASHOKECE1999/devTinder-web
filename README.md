@@ -15,6 +15,10 @@
 - created userSlice
 - implemented a login page
 - if user try to access other routes then we will redirect you too login page
+- implemedted edit feature
+- added toast for profile update indication
+- implemented component to show all connection
+- implemeted feed page
 
 - Body
   - NavBar

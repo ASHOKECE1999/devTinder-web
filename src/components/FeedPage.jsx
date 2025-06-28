@@ -24,7 +24,7 @@ const FeedPage = () => {
   return (
     <div>
       {feedData && (
-        <div className="flex items-center flex-row flex-wrap">
+        <div className="flex items-center flex-row flex-wrap justify-center">
           {feedData.map((userData) => (
             <UserCard key={userData._id} userData={userData} />
           ))}

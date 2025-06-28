@@ -5,7 +5,7 @@ const UserCard = (props) => {
   const { firstName, lastName, age, gender, about, skills, profileUrl } =
     userData;
   return (
-    <div className="card bg-base-100 w-96 shadow-sm flex items-center border-4 p-4 m-2">
+    <div className="card bg-base-100 max-w-96 min-w-96 shadow-sm w-96 h-96 flex items-center border-1 p-4 m-2 shadow-amber-200">
       <img
         src={profileUrl}
         alt="ProfileUrl"

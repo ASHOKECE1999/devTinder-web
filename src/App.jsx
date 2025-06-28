@@ -11,6 +11,8 @@ import Profile from "./components/Profile";
 import { Provider } from "react-redux";
 import appStore from "./utils/appStore";
 import FeedPage from "./components/FeedPage";
+import Connections from "./components/Connections";
+import Requests from "./components/Requests";
 
 function App() {
   // const [count, setCount] = useState(0)
@@ -23,7 +25,9 @@ function App() {
             <Route path="/" element={<Body />}>
               <Route path="/" element={<FeedPage />} />
               <Route path="/login" element={<Login />} />
-              <Route exact path="/profile" element={<Profile />} />
+              <Route path="/profile" element={<Profile />} />
+              <Route path="/connections" element={<Connections />} />
+              <Route path="/requests" element={<Requests />} />
             </Route>
           </Routes>
         </BrowserRouter>

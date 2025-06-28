@@ -9,8 +9,9 @@ import { addUser } from "../utils/userSlice";
 
 const Body = () => {
   const dispatch = useDispatch();
-  const naviagate = useNavigate();
+  const navigate = useNavigate();
   const user = useSelector((state) => state.user);
+
   // console.log(user);
 
   useEffect(() => {
@@ -24,10 +25,10 @@ const Body = () => {
       });
       dispatch(addUser(user.data));
       // console.log(user.data);
-      return naviagate("/");
     } catch (error) {
       // console.log(error.message);
-      return naviagate("/login");
+
+      navigate("/login");
     }
   };
 
