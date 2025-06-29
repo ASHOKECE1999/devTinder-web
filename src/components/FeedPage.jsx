@@ -46,11 +46,19 @@ const FeedPage = () => {
     );
   return (
     <div className="flex flex-col">
-      <div className="indicator self-end  mr-20 mt-4">
-        <span className="indicator-item indicator-center badge badge-secondary"></span>
-        <div className="bg-base-300 grid h-20 w-20 place-items-center rounded-full ">
-          <Link to="chatwithai">💬Ai</Link>
-        </div>
+      <div className="flex items-center gap-2 self-end mr-28 mt-3">
+        {/* Blinking dot */}
+        <span className="relative flex h-3 w-3">
+          <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-blue-400 opacity-75"></span>
+          <span className="relative inline-flex rounded-full h-3 w-3 bg-blue-500"></span>
+        </span>
+
+        {/* Gemini Label or Icon */}
+        <Link to="chatwithai">
+          <span className="text-sm font-medium text-red-700">
+            Chat Gemini AI
+          </span>
+        </Link>
       </div>
 
       {feedData[0] && (
