@@ -1,6 +1,6 @@
 import React from "react";
 
-const UserCard = (props) => {
+const FeedCard = (props) => {
   const { userData, reviewRequest } = props;
   console.log(userData, "for User Data");
   const { _id, firstName, lastName, age, gender, about, skills, profileUrl } =
@@ -11,7 +11,7 @@ const UserCard = (props) => {
   };
 
   return (
-    <div className="card bg-base-100  shadow-sm  flex flex-row w-2/4  items-center justify-between border-1 p-4 m-2 shadow-amber-200">
+    <div className="card bg-base-100  shadow-sm  flex flex-col w-96 h-96  items-center justify-between border-1 p-4 m-2 shadow-amber-200">
       <img
         src={profileUrl}
         alt="ProfileUrl"
@@ -24,23 +24,23 @@ const UserCard = (props) => {
         </h2>
         <p>{about}</p>
         <h2>Gender :{gender}</h2>
-      </div>
-      <div className="card-actions justify-between items-center">
-        <button
-          className="btn btn-primary mr-3"
-          onClick={() => callReviewFunction(_id, "rejected")}
-        >
-          Reject
-        </button>
-        <button
-          className="btn btn-info"
-          onClick={() => callReviewFunction(_id, "accepted")}
-        >
-          Accept
-        </button>
+        <div className="card-actions justify-center">
+          <button
+            className="btn btn-primary"
+            onClick={() => callReviewFunction(_id, "ignored")}
+          >
+            Ignore
+          </button>
+          <button
+            className="btn btn-info"
+            onClick={() => callReviewFunction(_id, "interested")}
+          >
+            Interested
+          </button>
+        </div>
       </div>
     </div>
   );
 };
 
-export default UserCard;
+export default FeedCard;

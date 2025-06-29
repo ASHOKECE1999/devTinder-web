@@ -9,7 +9,7 @@ const Profile = () => {
   return (
     <>
       {showToast && (
-        <div className="toast toast-top toast-center mt-10">
+        <div className="toast toast-top toast-center mt-10 z-20">
           <div className="alert alert-success">
             <span>Profile saved successfully.</span>
           </div>
@@ -17,7 +17,7 @@ const Profile = () => {
       )}
       <div className="min-h-screen flex items-center  bg-base-200">
         <EditProfile showToastCall={showToastSetter} />
-        <div className="card card-side bg-base-100 shadow-md border border-amber-200 p-4 max-w-xl w-1/4 flex flex-col items-center">
+        <div className="card card-side bg-base-100 shadow-md border border-amber-200 p-4 min-h-[80%] max-w-xl w-1/4 flex flex-col items-center">
           <img
             src={user?.profileUrl}
             alt={`${user?.firstName} profile`}
@@ -29,7 +29,8 @@ const Profile = () => {
               {user?.firstName} {user?.lastName}
             </h2>
             <p className="text-sm text-gray-600">{user?.gender}</p>
-            <p className="text-base text-gray-600">{user?.about}</p>
+            <p className="text-base text-base-600">{user?.about}</p>
+            <p className="text-base text-red-600">AGE : {user?.age}</p>
 
             {user?.skills?.length > 0 && (
               <p className="text-sm text-gray-700">

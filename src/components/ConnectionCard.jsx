@@ -12,16 +12,14 @@ const ConnectionCard = (props) => {
         className="w-34 rounded-2xl object-cover"
       />
 
-      <div className="card-body flex-grow space-y-2">
+      <div className="card-body flex-grow space-y-2 flex flex-col justify-start items-start">
         <h2 className="card-title text-2xl font-bold text-primary">
           {cardData?.firstName} {cardData?.lastName}
         </h2>
         <h1>{cardData?.about}</h1>
         <h1>
           Lorem ipsum, dolor sit amet consectetur adipisicing elit. Harum alias
-          error laborum eligendi soluta omnis magnam facilis accusantium at eius
-          maiores provident et consectetur totam nostrum, molestiae consequuntur
-          sint fugit.
+          error
         </h1>
       </div>
     </div>

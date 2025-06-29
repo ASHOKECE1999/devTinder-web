@@ -5,7 +5,15 @@ const connectionSlice = createSlice({
   initialState: null,
   reducers: {
     addConncetion: (state, actions) => actions.payload,
-    removeConnection: (state, actions) => null,
+    removeConnection: (state, actions) => {
+      console.log(state, actions);
+      console.log("itsCamehere");
+      const newConnction = state?.filter(
+        (t) => t?.fromUserId?._id !== actions?.payload
+      );
+      console.log(newConnction, "newConnction");
+      return newConnction;
+    },
   },
 });
 

@@ -41,7 +41,7 @@ export default function ProfileEditForm(props) {
       showToastCall(true);
       const timer = setTimeout(() => {
         showToastCall(false);
-      }, 3000);
+      }, 9000);
     } catch (error) {
       console.log(error);
     }
