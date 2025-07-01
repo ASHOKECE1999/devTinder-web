@@ -16,11 +16,14 @@ async function main(text) {
 const ChatWithAi = () => {
   const [yourAsk, yourAskSetter] = useState("");
   const [data, setData] = useState(null);
+  const [showLoader, showLoaderSetter] = useState(false);
 
   const fetchDataFromIt = async () => {
+    showLoaderSetter(true);
     const aiRes = await main(yourAsk + "in 100 words");
     setData(aiRes);
     yourAskSetter("");
+    showLoaderSetter(false);
   };
 
   return (
@@ -59,8 +62,15 @@ const ChatWithAi = () => {
           </button>
         </div>
       </div>
-
-      {data && <div className="w-3/4 mt-3"> {data}</div>}
+      {showLoader && (
+        <span className="loading loading-ring loading-xl mt-11"></span>
+      )}
+      {data && !showLoader && (
+        <div className="w-3/4 mt-3 border-2 p-4 rounded-3xl text-cyan-500 text-xl">
+          {" "}
+          {data}
+        </div>
+      )}
     </div>
   );
 };

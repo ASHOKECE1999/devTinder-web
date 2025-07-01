@@ -18,7 +18,7 @@ const FeedCard = (props) => {
         className="h-40 w-40 rounded-4xl"
       />
 
-      <div className="card-body">
+      <div className="card-body flex items-center justify-center flex-col">
         <h2 className="card-title">
           {firstName} {lastName}
         </h2>

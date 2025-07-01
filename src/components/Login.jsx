@@ -17,11 +17,11 @@ const Login = () => {
   const user = useSelector((state) => state.user);
   console.log(user);
 
-  useEffect(() => {
-    if (user) {
-      navigate("/");
-    }
-  });
+  // useEffect(() => {
+  //   if (user) {
+  //     navigate("/");
+  //   }
+  // });
 
   const logTheUser = async () => {
     try {
