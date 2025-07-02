@@ -1,1 +1,1 @@
-export const BASE_FETCH_URL = "http://localhost:3000";
+export const BASE_FETCH_URL = "/api";
