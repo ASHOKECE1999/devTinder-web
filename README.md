@@ -89,3 +89,8 @@ Open an SSH client.
   - restart nginx
   - restart nginx - sudo systemctl restart nginx
   - modify the base url in ui
+
+try_files $uri $uri/ =404;
+root /var/www/html;
+index index.html;
+try_files $uri /index.html;
