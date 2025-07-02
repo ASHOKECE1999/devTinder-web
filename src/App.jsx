@@ -29,7 +29,7 @@ function App() {
               <Route path="/profile" element={<Profile />} />
               <Route path="/connections" element={<Connections />} />
               <Route path="/requests" element={<Requests />} />
-              <Route path="chatwithai" element={<ChatWithAi />} />
+              {/* <Route path="chatwithai" element={<ChatWithAi />} /> */}
             </Route>
           </Routes>
         </BrowserRouter>
